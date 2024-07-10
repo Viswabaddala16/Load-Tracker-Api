@@ -1,13 +1,17 @@
 package com.loadmanagement.postgresql.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 import java.util.UUID;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 @Entity
-@Table(name = "loads")
+@Table(name ="loads")
 public class Load {
 
     @Id
@@ -25,7 +29,7 @@ public class Load {
 
     private UUID shipperId;
 
-    @JsonFormat(pattern = "dd-MM-yyyy") // Ensure date format matches your input
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date date;
 
     // Getters and setters
@@ -81,14 +85,6 @@ public class Load {
     public double getWeight() {
         return weight;
     }
-    
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
 
     public void setWeight(double weight) {
         this.weight = weight;
@@ -100,6 +96,13 @@ public class Load {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public UUID getShipperId() {
@@ -118,6 +121,8 @@ public class Load {
         this.date = date;
     }
 }
+
+
 
 
 
@@ -243,3 +248,8 @@ public class Load {
 //        this.date = date;
 //    }
 //}
+//FROM eclipse-temurin:22-jdk-alpine
+//VOLUME /tmp
+//COPY target/*.jar app.jar
+//ENTRYPOINT ["java", "-jar","/app.jar"]
+//EXPOSE 8080 
