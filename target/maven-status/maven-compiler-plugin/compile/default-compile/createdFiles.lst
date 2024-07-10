@@ -1,0 +1,4 @@
+com\loadmanagement\postgresql\controller\LoadController.class
+com\loadmanagement\postgresql\PostgresqlApplication.class
+com\loadmanagement\postgresql\entity\Load.class
+com\loadmanagement\postgresql\repository\LoadRepository.class
